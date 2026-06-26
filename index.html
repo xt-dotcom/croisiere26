@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À bord de Key West — Croisière Côte d’Azur 2026</title>
+  <meta name="description" content="Carnet de croisière à bord de Key West, de Hyères aux îles de Lérins, du 27 juin au 4 juillet 2026." />
+  <style>
+    :root{
+      --navy:#06283d;
+      --blue:#136f8f;
+      --turquoise:#70c7c9;
+      --sand:#f4ead7;
+      --cream:#fffaf0;
+      --ink:#1d2a2f;
+      --muted:#6e7b80;
+      --card:rgba(255,255,255,.92);
+      --shadow:0 18px 45px rgba(0,0,0,.18);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:linear-gradient(180deg,#fffaf0 0%,#eef8f8 100%);
+      line-height:1.65;
+    }
+
+    a{color:inherit}
+    .hero{
+      min-height:100vh;
+      display:grid;
+      align-items:end;
+      position:relative;
+      color:white;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.48) 66%, rgba(0,0,0,.78) 100%),
+        url("https://cdn2.riv-art.fr/img/annonce/68522/4-dufour41.webp") center/cover no-repeat;
+      overflow:hidden;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height:120px;
+      background:linear-gradient(180deg,transparent,var(--cream));
+      pointer-events:none;
+    }
+    .hero-content{
+      width:min(1120px,92vw);
+      margin:0 auto 9vh;
+      position:relative;
+      z-index:1;
+      text-shadow:0 3px 18px rgba(0,0,0,.45);
+    }
+    .eyebrow{
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:700;
+      font-size:.85rem;
+      opacity:.9;
+    }
+    h1{
+      font-size:clamp(3rem,8vw,7.5rem);
+      line-height:.95;
+      margin:.2em 0 .18em;
+      font-weight:850;
+    }
+    .subtitle{
+      font-size:clamp(1.1rem,2vw,1.65rem);
+      max-width:720px;
+      margin:0 0 1.5rem;
+    }
+    .stats{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.65rem;
+      margin-top:1.8rem;
+    }
+    .pill{
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.35);
+      backdrop-filter:blur(10px);
+      padding:.55rem .85rem;
+      border-radius:999px;
+      font-weight:700;
+      font-size:.92rem;
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(255,250,240,.92);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(6,40,61,.08);
+    }
+    .nav-inner{
+      width:min(1120px,92vw);
+      margin:auto;
+      display:flex;
+      gap:.7rem;
+      align-items:center;
+      justify-content:space-between;
+      padding:.7rem 0;
+      overflow-x:auto;
+    }
+    .brand{font-weight:850;color:var(--navy);white-space:nowrap}
+    .links{display:flex;gap:.45rem}
+    .links a{
+      text-decoration:none;
+      font-size:.85rem;
+      white-space:nowrap;
+      padding:.35rem .6rem;
+      border-radius:999px;
+      color:#31505b;
+    }
+    .links a:hover{background:#e4f5f5}
+
+    main{overflow:hidden}
+    .section{
+      width:min(1120px,92vw);
+      margin:0 auto;
+      padding:5rem 0;
+    }
+    .intro{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:3rem;
+      align-items:start;
+    }
+    .lead{
+      font-size:1.22rem;
+      color:#24383f;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid rgba(6,40,61,.08);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:2rem;
+    }
+    .crew{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+      margin-top:1.4rem;
+    }
+    .crew-member{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      text-align:center;
+      font-weight:800;
+      color:var(--navy);
+    }
+    .crew-member img{
+      display:block;
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+    }
+    .crew-member span{display:block;padding:.75rem}
+
+    .route-card{
+      background:linear-gradient(135deg,#06344f,#0b7892);
+      color:white;
+      border-radius:34px;
+      padding:2.3rem;
+      box-shadow:var(--shadow);
+    }
+    .route-card h2{margin-top:0;font-size:2rem}
+    .route-list{
+      list-style:none;
+      padding:0;margin:1.4rem 0 0;
+      display:grid;
+      gap:.75rem;
+    }
+    .route-list li{
+      display:flex;
+      gap:.8rem;
+      align-items:flex-start;
+      border-top:1px solid rgba(255,255,255,.18);
+      padding-top:.75rem;
+    }
+    .dot{
+      width:.7rem;height:.7rem;border-radius:50%;
+      background:var(--turquoise);
+      margin-top:.55rem;
+      flex:0 0 auto;
+    }
+
+    .day{
+      position:relative;
+      padding:0;
+      margin:0;
+      background:var(--cream);
+    }
+    .day-hero{
+      min-height:72vh;
+      display:flex;
+      align-items:end;
+      background-position:center;
+      background-size:cover;
+      position:relative;
+      color:white;
+    }
+    .day-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.72));
+    }
+    .day-title{
+      width:min(1120px,92vw);
+      margin:0 auto;
+      padding:0 0 4.2rem;
+      position:relative;
+      z-index:1;
+      text-shadow:0 3px 18px rgba(0,0,0,.5);
+    }
+    .day-title h2{
+      font-size:clamp(2.2rem,5.5vw,5.4rem);
+      line-height:1;
+      margin:.35rem 0 .5rem;
+    }
+    .day-title p{font-size:1.25rem;margin:0;max-width:700px}
+    .day-body{
+      width:min(1120px,92vw);
+      margin:-3rem auto 0;
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:2rem;
+      padding-bottom:5rem;
+    }
+    .program{
+      align-self:start;
+      position:sticky;
+      top:5rem;
+      background:white;
+      border-radius:28px;
+      padding:1.6rem;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(6,40,61,.08);
+    }
+    .program h3{margin:0 0 1rem;color:var(--navy)}
+    .program dl{
+      margin:0;
+      display:grid;
+      gap:.8rem;
+    }
+    .program div{
+      border-top:1px solid #edf1f2;
+      padding-top:.75rem;
+    }
+    .program dt{
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:850;
+      color:var(--blue);
+    }
+    .program dd{margin:.2rem 0 0;font-weight:650}
+    .story{
+      background:rgba(255,255,255,.94);
+      border-radius:32px;
+      padding:2rem 2.2rem;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(6,40,61,.08);
+    }
+    .story h3{
+      color:var(--navy);
+      margin-top:1.8rem;
+    }
+    .memory{
+      margin-top:2rem;
+      padding:1.2rem 1.4rem;
+      border-left:5px solid var(--turquoise);
+      background:#eefafa;
+      border-radius:16px;
+      font-weight:720;
+    }
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+      margin-top:2rem;
+    }
+    .gallery img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius:22px;
+      box-shadow:0 12px 26px rgba(0,0,0,.12);
+    }
+    .sources{
+      font-size:.78rem;
+      color:var(--muted);
+      margin-top:1.4rem;
+    }
+    .sources a{color:var(--muted)}
+
+    .closing{
+      min-height:80vh;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      color:white;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.72)),
+        url("https://cdn2.riv-art.fr/img/annonce/68522/4-dufour41.webp") center/cover no-repeat;
+      padding:4rem 1rem;
+    }
+    .closing .box{
+      width:min(820px,92vw);
+      background:rgba(6,40,61,.54);
+      backdrop-filter:blur(12px);
+      padding:3rem;
+      border-radius:34px;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .closing h2{
+      font-size:clamp(2rem,5vw,4.6rem);
+      line-height:1.05;
+      margin:0 0 1rem;
+    }
+
+    @media (max-width:900px){
+      .intro,.day-body{grid-template-columns:1fr}
+      .program{position:relative;top:auto}
+      .crew{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:1fr}
+      h1{font-size:clamp(3rem,16vw,5.2rem)}
+    }
+    @media (max-width:560px){
+      .crew{grid-template-columns:1fr 1fr}
+      .card,.story,.program,.route-card{border-radius:22px;padding:1.35rem}
+      .section{padding:3.5rem 0}
+      .day-title{padding-bottom:3.2rem}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-content">
+      <div class="eyebrow">Croisière Côte d’Azur 2026</div>
+      <h1>À bord de Key West</h1>
+      <p class="subtitle">De Hyères aux îles de Lérins, une semaine de navigation entre amis.</p>
+      <div class="stats">
+        <span class="pill">27 juin → 4 juillet</span>
+        <span class="pill">6 équipiers</span>
+        <span class="pill">≈ 190 milles</span>
+        <span class="pill">1 nuit au port</span>
+        <span class="pill">baignades • paddle • snorkeling</span>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="brand">Key West</div>
+      <div class="links">
+        <a href="#intro">Intro</a>
+        <a href="#samedi">Samedi</a>
+        <a href="#dimanche">Dimanche</a>
+        <a href="#lundi">Lundi</a>
+        <a href="#mardi">Mardi</a>
+        <a href="#mercredi">Mercredi</a>
+        <a href="#jeudi">Jeudi</a>
+        <a href="#vendredi">Vendredi</a>
+        <a href="#samedi-retour">Retour</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section intro" id="intro">
+      <div>
+        <h2>Une semaine entre îles, caps et roches rouges</h2>
+        <p class="lead"><strong>Pendant une semaine, le Dufour 41 Key West sera notre maison.</strong> Nous longerons l’une des plus belles côtes de Méditerranée, entre les îles d’Hyères, le Cap Taillat, l’Estérel et, si la météo le permet, les îles de Lérins.</p>
+        <p>Au programme : baignades dans des eaux cristallines, paddle, snorkeling, une randonnée à terre, une nuit au port et surtout une semaine de vacances entre amis.</p>
+        <p><strong>L’équipage n’a pas changé :</strong> Xavier, Isabelle, Marcel, Magali, Didou et Cathy.</p>
+        <p>Cette croisière est pensée pour que chacun profite pleinement de la mer, des paysages et de la douceur de vivre méditerranéenne.</p>
+      </div>
+      <div class="card">
+        <h2>L’équipage</h2>
+        <div class="crew">
+          <div class="crew-member"><img src="xavier.jpg" alt="Xavier"><span>Xavier</span></div>
+          <div class="crew-member"><img src="isabelle.jpg" alt="Isabelle"><span>Isabelle</span></div>
+          <div class="crew-member"><img src="marcel.jpg" alt="Marcel"><span>Marcel</span></div>
+          <div class="crew-member"><img src="magali.jpg" alt="Magali"><span>Magali</span></div>
+          <div class="crew-member"><img src="didou.jpg" alt="Didou"><span>Didou</span></div>
+          <div class="crew-member"><img src="cathy.jpg" alt="Cathy"><span>Cathy</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="route-card">
+        <h2>Le parcours envisagé</h2>
+        <p>Le programme reste volontairement souple. En Méditerranée, ce sont toujours le vent, la mer et le confort de l’équipage qui décident en dernier.</p>
+        <ul class="route-list">
+          <li><span class="dot"></span><span>Hyères → Porquerolles : première baignade et première nuit au mouillage.</span></li>
+          <li><span class="dot"></span><span>Porquerolles → Port-Cros / Bagaud : snorkeling et randonnée facultative en fin d’après-midi.</span></li>
+          <li><span class="dot"></span><span>Port-Cros → Cap Taillat : grande journée varoise et mouillage carte postale.</span></li>
+          <li><span class="dot"></span><span>Cap Taillat → Saint-Raphaël : Estérel, roches rouges et nuit confortable au port.</span></li>
+          <li><span class="dot"></span><span>Saint-Raphaël → Lérins ou Agay : journée adaptable selon météo et envie.</span></li>
+          <li><span class="dot"></span><span>Retour vers Porquerolles, puis Hyères pour la restitution.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="day" id="samedi">
+      <div class="day-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Port%2C%20Hy%C3%A8res%2C%20France%20-%20panoramio.jpg?width=1800')">
+        <div class="day-title">
+          <div class="eyebrow">Samedi 27 juin</div>
+          <h2>L’aventure commence</h2>
+          <p>Prise en main de Key West au port d’Hyères.</p>
+        </div>
+      </div>
+      <div class="day-body">
+        <aside class="program">
+          <h3>Le programme du jour</h3>
+          <dl>
+            <div><dt>Lieu</dt><dd>Port d’Hyères</dd></div>
+            <div><dt>Horaire</dt><dd>Prise en main à 16 h 30</dd></div>
+            <div><dt>À faire</dt><dd>Formalités, chargement, briefing, installation</dd></div>
+            <div><dt>Nuit</dt><dd>À quai au port d’Hyères</dd></div>
+          </dl>
+        </aside>
+        <article class="story">
+          <p>À 16 h 30, Isabelle, Magali, Marcel et Xavier prennent possession de Key West au port d’Hyères.</p>
+          <p>Les formalités sont effectuées, les bagages trouvent leur place, les provisions sont rangées et le bateau est vérifié avec le loueur. Cette première soirée se passe tranquillement à bord, au port, avec déjà les premières discussions sur les mouillages, les baignades et les navigations à venir.</p>
+          <p>Dans la nuit, Didou et Cathy rejoignent le bord. Demain matin, l’équipage sera au complet.</p>
+          <div class="memory">Le moment à retenir : le premier apéritif dans le cockpit, alors que la semaine ne fait que commencer.</div>
+          <p class="sources">Photo : Wikimedia Commons — Port d’Hyères.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="dimanche">
+      <div class="day-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Porquerolles%20Plage%20Notre%20Dame.jpg?width=1800')">
+        <div class="day-title">
+          <div class="eyebrow">Dimanche 28 juin</div>
+          <h2>Hyères → Porquerolles</h2>
+          <p>Première navigation, première eau turquoise.</p>
+        </div>
+      </div>
+      <div class="day-body">
+        <aside class="program">
+          <h3>Le programme du jour</h3>
+          <dl>
+            <div><dt>Navigation</dt><dd>≈ 10 à 12 milles • 2 h à 2 h 30</dd></div>
+            <div><dt>Départ</dt><dd>Vers 9 h 00</dd></div>
+            <div><dt>Déjeuner</dt><dd>Notre-Dame ou Alycastre</dd></div>
+            <div><dt>Baignade</dt><dd>Bon Renaud ou côte nord de Porquerolles</dd></div>
+            <div><dt>Nuit</dt><dd>La Courtade ou Langoustier selon vent</dd></div>
+          </dl>
+        </aside>
+        <article class="story">
+          <p>Le premier départ se fait sans précipitation. Key West quitte doucement le port d’Hyères et met le cap sur Porquerolles. La navigation est courte, parfaite pour prendre ses marques, régler l’organisation à bord et laisser chacun entrer dans le rythme de la croisière.</p>
+          <h3>Déjeuner</h3>
+          <p>Premier mouillage devant Notre-Dame ou l’Alycastre, selon les conditions. L’eau turquoise de Porquerolles donne tout de suite le ton de la semaine : baignade, paddle, déjeuner à bord et plaisir simple d’être enfin en mer.</p>
+          <h3>Après-midi</h3>
+          <p>Cabotage tranquille autour de Porquerolles. Si tout le monde est en forme, un petit arrêt baignade vers Bon Renaud ou la côte nord permet de prolonger cette première journée sans la rendre fatigante.</p>
+          <h3>Nuit</h3>
+          <p>Mouillage à La Courtade ou au Langoustier, selon le vent. Première nuit au mouillage. Le bateau est installé, l’équipage aussi.</p>
+          <div class="gallery">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Beach-Notre-Dame-Porquerolles.jpg?width=1000" alt="Plage Notre-Dame à Porquerolles">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Courtade.JPG?width=1000" alt="La Courtade à Porquerolles">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2002%20Sm%20Porquerolles.jpg?width=1000" alt="Mouillage à Porquerolles">
+          </div>
+          <div class="memory">Le moment à retenir : la première baignade dans les eaux claires de Porquerolles.</div>
+          <p class="sources">Photos : Wikimedia Commons — Plage Notre-Dame, La Courtade, mouillage de Porquerolles.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="lundi">
+      <div class="day-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Port-Cros%20et%20Bagaud%20du%20Cap%20Blanc%2C%20Cap%20B%C3%A9nat%20-%20panoramio.jpg?width=1800')">
+        <div class="day-title">
+          <div class="eyebrow">Lundi 29 juin</div>
+          <h2>Porquerolles → Port-Cros / Bagaud</h2>
+          <p>Le cœur sauvage du Parc national.</p>
+        </div>
+      </div>
+      <div class="day-body">
+        <aside class="program">
+          <h3>Le programme du jour</h3>
+          <dl>
+            <div><dt>Navigation</dt><dd>≈ 12 à 15 milles • 2 h 30 à 3 h</dd></div>
+            <div><dt>Déjeuner</dt><dd>Secteur Bagaud, selon disponibilité</dd></div>
+            <div><dt>Activités</dt><dd>Snorkeling, paddle, baignade</dd></div>
+            <div><dt>Rando</dt><dd>Facultative, en fin d’après-midi</dd></div>
+            <div><dt>Nuit</dt><dd>ZMEL de Bagaud ou port de Port-Cros</dd></div>
+          </dl>
+        </aside>
+        <article class="story">
+          <p>La journée est consacrée au Parc national de Port-Cros. On ne cherche pas à faire des milles : l’objectif est de profiter d’un des plus beaux secteurs de la croisière.</p>
+          <h3>Déjeuner</h3>
+          <p>Mouillage ou bouée dans le secteur de Bagaud, selon disponibilité. C’est une journée idéale pour le snorkeling : les fonds sont superbes et l’ambiance beaucoup plus sauvage que la veille.</p>
+          <h3>Après-midi</h3>
+          <p>Baignade, paddle, repos à bord. Pour ceux qui le souhaitent, possibilité de rejoindre Port-Cros en annexe et de faire une petite balade à terre en fin d’après-midi, lorsque la chaleur baisse. La randonnée peut rester courte : l’idée est surtout de prendre un peu de hauteur et de profiter de l’île.</p>
+          <h3>Nuit</h3>
+          <p>Bouée dans la ZMEL de Bagaud, ou port de Port-Cros si une place est disponible. La soirée devrait être l’une des plus calmes de la semaine.</p>
+          <div class="gallery">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ile%20de%20Bagaud.JPG?width=1000" alt="Île de Bagaud">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/%C3%8Ele%20de%20Bagaud%20vue%20de%20l%E2%80%99%C3%AEle%20de%20Port-Cros.jpg?width=1000" alt="Bagaud vue de Port-Cros">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/%C3%8Eles%20d%E2%80%99Hy%C3%A8res%2C%20avril%202019%20-%20006.jpg?width=1000" alt="Port-Cros">
+          </div>
+          <div class="memory">Le moment à retenir : le silence de Port-Cros au coucher du soleil.</div>
+          <p class="sources">Photos : Wikimedia Commons — Port-Cros et Bagaud.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="mardi">
+      <div class="day-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Cap%20Taillat%20-%20panoramio.jpg?width=1800')">
+        <div class="day-title">
+          <div class="eyebrow">Mardi 30 juin</div>
+          <h2>Port-Cros → Cap Taillat</h2>
+          <p>Grande journée varoise et mouillage carte postale.</p>
+        </div>
+      </div>
+      <div class="day-body">
+        <aside class="program">
+          <h3>Le programme du jour</h3>
+          <dl>
+            <div><dt>Navigation</dt><dd>≈ 25 à 28 milles • 5 h à 5 h 30</dd></div>
+            <div><dt>Déjeuner</dt><dd>Cap Bénat ou Brégançon</dd></div>
+            <div><dt>Pause possible</dt><dd>Cavalière ou Cavalaire</dd></div>
+            <div><dt>Nuit</dt><dd>Cap Taillat, si météo favorable</dd></div>
+          </dl>
+        </aside>
+        <article class="story">
+          <p>Cette étape marque le début du grand cabotage vers l’est. Key West longe la côte varoise, avec Bormes-les-Mimosas, le Cap Bénat, Brégançon, puis la côte plus ouverte vers Cavalaire et le golfe de Saint-Tropez.</p>
+          <h3>Déjeuner</h3>
+          <p>Mouillage dans le secteur du Cap Bénat ou de Brégançon, selon la météo. Pause baignade, déjeuner à bord, puis reprise de la navigation.</p>
+          <h3>Après-midi</h3>
+          <p>Petit arrêt possible vers Cavalière ou Cavalaire si l’équipage a envie de couper l’après-midi ou si la mer devient moins agréable. Puis cap sur le Cap Taillat.</p>
+          <h3>Nuit</h3>
+          <p>Cap Taillat. C’est l’un des grands moments de la croisière. Eau claire, décor sauvage, paddle en fin de journée, dîner à bord et coucher de soleil au mouillage.</p>
+          <div class="gallery">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cap%20taillat.jpg?width=1000" alt="Cap Taillat">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cap%20Taillat%20001.JPG?width=1000" alt="Cap Taillat vue mer">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cap%20Taillat%20002.JPG?width=1000" alt="Cap Taillat">
+          </div>
+          <div class="memory">Le moment à retenir : le paddle au Cap Taillat dans la lumière du soir.</div>
+          <p class="sources">Photos : Wikimedia Commons — Cap Taillat.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="mercredi">
+      <div class="day-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Calanque%20du%20Petit%20Canereit-Massif%20de%20l%27Esterel.jpg?width=1800')">
+        <div class="day-title">
+          <div class="eyebrow">Mercredi 1er juillet</div>
+          <h2>Cap Taillat → Saint-Raphaël</h2>
+          <p>Les roches rouges de l’Estérel, puis la nuit au port.</p>
+        </div>
+      </div>
+      <div class="day-body">
+        <aside class="program">
+          <h3>Le programme du jour</h3>
+          <dl>
+            <div><dt>Navigation</dt><dd>≈ 25 à 30 milles • 5 h à 6 h</dd></div>
+            <div><dt>Déjeuner</dt><dd>Cap Camarat ou Pampelonne</dd></div>
+            <div><dt>Après-midi</dt><dd>Navigation vers l’Estérel</dd></div>
+            <div><dt>Nuit</dt><dd>Port Santa Lucia, Saint-Raphaël</dd></div>
+          </dl>
+        </aside>
+        <article class="story">
+          <p>Le matin, personne n’aura vraiment envie de partir trop vite. Un dernier bain au Cap Taillat, puis Key West reprend sa route vers l’Estérel.</p>
+          <h3>Déjeuner</h3>
+          <p>Cap Camarat ou Pampelonne, selon les conditions. Camarat sera le choix le plus sauvage. Pampelonne sera plus iconique, mais souvent plus fréquentée.</p>
+          <h3>Après-midi</h3>
+          <p>Navigation vers le massif de l’Estérel. Les roches rouges apparaissent progressivement. Le paysage change complètement : la côte devient plus spectaculaire, plus minérale, avec de très beaux contrastes entre le rouge des falaises et le bleu profond de la mer.</p>
+          <h3>Nuit</h3>
+          <p>Port Santa Lucia, à Saint-Raphaël. Cette nuit au port arrive au bon moment : douches, avitaillement, recharge, promenade à terre et dîner au restaurant. Une pause confortable qui fera du bien à tout le monde.</p>
+          <div class="gallery">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Anth%C3%A9or-Esterel-France.JPG?width=1000" alt="Anthéor et l’Estérel">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Massif%20de%20L%27Esterel.JPG?width=1000" alt="Massif de l’Estérel">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Port%20de%20Santa%20Lucia%20St%20Rapha%C3%ABl%20%2823987520775%29.jpg?width=1000" alt="Port Santa Lucia">
+          </div>
+          <div class="memory">Le moment à retenir : l’arrivée sur les falaises rouges de l’Estérel.</div>
+          <p class="sources">Photos : Wikimedia Commons — Estérel, Anthéor, Port Santa Lucia.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="jeudi">
+      <div class="day-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20%C3%8Eles%20de%20L%C3%A9rins.jpg?width=1800')">
+        <div class="day-title">
+          <div class="eyebrow">Jeudi 2 juillet</div>
+          <h2>Saint-Raphaël → Lérins ou Agay</h2>
+          <p>La journée adaptable, selon météo et envie.</p>
+        </div>
+      </div>
+      <div class="day-body">
+        <aside class="program">
+          <h3>Le programme du jour</h3>
+          <dl>
+            <div><dt>Navigation</dt><dd>≈ 18 à 22 milles jusqu’aux Lérins</dd></div>
+            <div><dt>Déjeuner</dt><dd>Anthéor, Maubois ou pointe de l’Aiguille</dd></div>
+            <div><dt>Option A</dt><dd>Nuit aux îles de Lérins</dd></div>
+            <div><dt>Option B</dt><dd>Retour vers Agay ou Santa Lucia</dd></div>
+            <div><dt>Recommandation</dt><dd>Agay ou Santa Lucia pour raccourcir le vendredi</dd></div>
+          </dl>
+        </aside>
+        <article class="story">
+          <p>Cette journée dépendra beaucoup de la météo et de l’envie de l’équipage. Si les conditions sont belles, Key West met le cap vers les îles de Lérins. La navigation longe l’Estérel, passe devant Théoule, puis rejoint la baie de Cannes.</p>
+          <h3>Déjeuner</h3>
+          <p>Anthéor, Maubois ou pointe de l’Aiguille. Ce sera probablement l’un des plus beaux déjeuners de la semaine si la mer est calme.</p>
+          <h3>Deux options</h3>
+          <p><strong>Option A — météo parfaite :</strong> mouillage entre Sainte-Marguerite et Saint-Honorat, ou au sud de Saint-Honorat selon les conditions. C’est magnifique, mais le retour du lendemain sera long.</p>
+          <p><strong>Option B — option plus confortable :</strong> profiter des Lérins ou de l’Estérel dans la journée, puis revenir dormir plus à l’ouest. Cela raccourcit fortement la grande étape du vendredi.</p>
+          <h3>Nuit recommandée</h3>
+          <p>Agay si les conditions sont bonnes, ou Santa Lucia si l’on préfère la sécurité et le confort. C’est l’option à privilégier pour garder une dernière journée plus agréable.</p>
+          <div class="gallery">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/%C3%8Eles%20de%20L%C3%A9rins.JPG?width=1000" alt="Îles de Lérins">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/L%27%C3%AElot%20%28%C3%AEles%20de%20L%C3%A9rins%2C%202014%29.jpg?width=1000" alt="Îles de Lérins">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Esterel.JPG?width=1000" alt="Estérel">
+          </div>
+          <div class="memory">Le moment à retenir : le choix du soir, entre la magie des Lérins et le confort d’un retour plus sage.</div>
+          <p class="sources">Photos : Wikimedia Commons — Îles de Lérins et Estérel.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="vendredi">
+      <div class="day-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/2005%20Plage%20Notre-Dame%20Porquerolles%2024.JPG?width=1800')">
+        <div class="day-title">
+          <div class="eyebrow">Vendredi 3 juillet</div>
+          <h2>Retour vers Porquerolles</h2>
+          <p>La grande journée de navigation retour.</p>
+        </div>
+      </div>
+      <div class="day-body">
+        <aside class="program">
+          <h3>Le programme du jour</h3>
+          <dl>
+            <div><dt>Navigation</dt><dd>≈ 38 à 45 milles selon départ • 7 h 30 à 9 h</dd></div>
+            <div><dt>Départ</dt><dd>Matinal</dd></div>
+            <div><dt>Déjeuner</dt><dd>Cap Taillat, Cavalaire ou Brégançon</dd></div>
+            <div><dt>Nuit</dt><dd>La Courtade ou Langoustier</dd></div>
+            <div><dt>Plan sécurité</dt><dd>Port ou mouillage très proche d’Hyères</dd></div>
+          </dl>
+        </aside>
+        <article class="story">
+          <p>C’est la grande journée de retour. Le départ devra être matinal, surtout si l’on dort à Agay ou plus à l’est.</p>
+          <p>Key West reprend la route vers l’ouest. Cette journée sera plus navigante, probablement souvent au moteur si le vent est faible, mais elle permettra aussi de revoir les paysages parcourus à l’aller.</p>
+          <h3>Déjeuner</h3>
+          <p>Cap Taillat, Cavalaire ou Brégançon selon l’heure de passage. L’objectif est de faire une vraie pause baignade, mais sans transformer la journée en marathon.</p>
+          <h3>Après-midi</h3>
+          <p>Route vers Porquerolles ou la rade d’Hyères.</p>
+          <h3>Dernière nuit</h3>
+          <p>Mouillage à La Courtade ou au Langoustier si les conditions sont bonnes. Si la météo est incertaine ou si l’équipage préfère jouer la sécurité, dernière nuit au port ou très proche d’Hyères.</p>
+          <p>Dernier apéritif à bord. Dernier dîner. Les conversations reviendront forcément sur les meilleurs moments de la semaine : Port-Cros, Cap Taillat, l’Estérel, les baignades, les paddles, les soirées au mouillage.</p>
+          <div class="memory">Le moment à retenir : le dernier apéritif à bord, déjà rempli de souvenirs.</div>
+          <p class="sources">Photo : Wikimedia Commons — Porquerolles.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="day" id="samedi-retour">
+      <div class="day-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Port%20d%27Hy%C3%A8res%20-%20panoramio.jpg?width=1800')">
+        <div class="day-title">
+          <div class="eyebrow">Samedi 4 juillet</div>
+          <h2>Retour à Hyères</h2>
+          <p>Rentrer au port avant 9 h 30.</p>
+        </div>
+      </div>
+      <div class="day-body">
+        <aside class="program">
+          <h3>Le programme du jour</h3>
+          <dl>
+            <div><dt>Objectif</dt><dd>Entrée au port au plus tard à 9 h 30</dd></div>
+            <div><dt>Restitution</dt><dd>10 h 00</dd></div>
+            <div><dt>À prévoir</dt><dd>Rangement, sacs prêts, plein si demandé</dd></div>
+          </dl>
+        </aside>
+        <article class="story">
+          <p>Le réveil sera matinal, mais la navigation courte si la dernière nuit s’est faite à Porquerolles ou dans la rade d’Hyères.</p>
+          <p>Key West retrouve le port d’Hyères. Les sacs sont prêts, le bateau est rangé, et la croisière touche à sa fin.</p>
+          <p>Une semaine, six amis, des dizaines de baignades, quelques belles navigations, une nuit au port, des mouillages superbes et déjà l’envie de repartir.</p>
+          <div class="memory">Fin du carnet de bord.</div>
+          <p class="sources">Photo : Wikimedia Commons — Port d’Hyères.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="box">
+        <h2>Une semaine hors du temps</h2>
+        <p>Une semaine, près de 190 milles parcourus, des dizaines de baignades, quelques coups de soleil, beaucoup de rires… et déjà l’envie de repartir.</p>
+        <p>Merci à Isabelle, Marcel, Magali, Didou et Cathy pour cette belle aventure.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Petit effet visuel discret : apparition douce des blocs au défilement.
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.story, .program, .card, .route-card').forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity .7s ease, transform .7s ease';
+      observer.observe(el);
+    });
+
+    const style = document.createElement('style');
+    style.textContent = `.visible{opacity:1!important;transform:none!important}`;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
